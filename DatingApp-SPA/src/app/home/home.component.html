@@ -1,0 +1,20 @@
+<div class="container mt-5">
+  <div *ngIf="!isRegisterMode" style="text-align:center">
+    <h1>Find your match</h1>
+    <p class="lead">Sign up below to find the one you're looking for!</p>
+    <div class="text-center">
+      <div class="btn btn-primary btn-lg mr-3" (click)="enableRegisterMode()">
+        Register
+      </div>
+      <div class="btn btn-info btn-lg">Learn More</div>
+    </div>
+  </div>
+
+  <div *ngIf="isRegisterMode" class="container">
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <app-register (cancelCallback)="disableRegisterMode()"></app-register>
+      </div>
+    </div>
+  </div>
+</div>
